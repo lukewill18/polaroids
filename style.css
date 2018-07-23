@@ -15,7 +15,6 @@ body {
     height: 30px;
 }
 
-
 .pic-border {
     width: 240px;
     height: 280px;
@@ -39,8 +38,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
-
 
 #picture-box {
     position: relative;

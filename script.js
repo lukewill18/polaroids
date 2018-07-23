@@ -30,8 +30,10 @@ function createImage(link, num_hits, index) {
 }
 
 $(document).ready(function() {
-    $("#submit-btn").click(function() {
-        $.get("https://pixabay.com/api/?key=9598473-d6fb8fe6d3d70f52fdfdfe38d&q=" + $("#search-query").val(), function(data) {
+    $("#entry-form").on("submit", function(e) {
+        e.preventDefault();
+        let f = new FormData(e.target);
+        $.get("https://pixabay.com/api/?key=9598473-d6fb8fe6d3d70f52fdfdfe38d&q=" + f.get("search-query"), function(data) {
             for(let i = 0; i < data.hits.length; ++i)
             {
                 createImage(data.hits[i].webformatURL, data.hits.length, i);
